@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
+// const db = config.get('mongoURI');
+import { mongoURI } from '../mongoUri';
 
 const connectDB = async () => {
 	try {
-		await mongoose.connect('mongodb://localhost:27017/dev-connector', {
+		await mongoose.connect(mongoURI, {
 			useNewUrlParser: true,
 			useCreateIndex: true,
 			useFindAndModify: false,
